@@ -6,4 +6,8 @@
     <string name="title_notifications">Notifications</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="hemo_txt">Dengan fasilitas ruang Hemodalisa terletak di bagian gedung A dekat dengan Poli</string>
+    <string name="lab_txt">Dengan fasilitas ruang Laboratotium terletak di bagian gedung B dekat dengan ruang inap B</string>
+    <string name="rad_txt">Dengan fasilitas ruang Radiologi terletak di bagian gedung A dekat dengan ruang ICU A</string>
 </resources>
