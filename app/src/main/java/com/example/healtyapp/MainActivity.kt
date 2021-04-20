@@ -1,6 +1,7 @@
 package com.example.healtyapp
 
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -13,6 +14,7 @@ import com.example.healtyapp.activity.LoginActivity
 import com.example.healtyapp.fragment.AccountFragment
 import com.example.healtyapp.fragment.HomeFragment
 import com.example.healtyapp.fragment.PoliFragment
+import com.example.healtyapp.helper.SharedPref
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -27,13 +29,19 @@ class MainActivity : AppCompatActivity() {
     private lateinit var menuItem: MenuItem
     private lateinit var bottomNavigationView: BottomNavigationView
 
-    private var statusLogin = false
+    private var setStatusLogin = false
+
+    // var validasi login sharedpref
+    private lateinit var s: SharedPref
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        s = SharedPref(this) // get status dari sharedpref
+
         setBottomNav()
+
 
     }
 
@@ -58,7 +66,7 @@ class MainActivity : AppCompatActivity() {
                     callFragment(1, fragmentPoli)
                 }
                 R.id.navigation_account -> {
-                    if(statusLogin) {
+                    if(s.getStatusLogin()) { // validasi login
                         callFragment(2, fragmentAccount)
                     } else {
                         startActivity(Intent(this, LoginActivity::class.java))
