@@ -38,10 +38,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        s = SharedPref(this) // get status dari sharedpref
+        s = SharedPref(this)
 
         setBottomNav()
-
 
     }
 
@@ -66,7 +65,7 @@ class MainActivity : AppCompatActivity() {
                     callFragment(1, fragmentPoli)
                 }
                 R.id.navigation_account -> {
-                    if(s.getStatusLogin()) { // validasi login
+                    if(s.getStatusLogin()) { // get boolean status dari sharedpref
                         callFragment(2, fragmentAccount)
                     } else {
                         startActivity(Intent(this, LoginActivity::class.java))

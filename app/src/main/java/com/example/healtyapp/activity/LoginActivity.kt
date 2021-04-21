@@ -12,10 +12,18 @@ class LoginActivity : AppCompatActivity() {
 
     // inisialisasi
     lateinit var s:SharedPref
+    lateinit var btn_login:Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+        btn_login = findViewById(R.id.btn_login)
+
+        s = SharedPref(this)
+
+        btn_login.setOnClickListener{
+            s.setStatusLogin(true)
+        }
 
     }
 
