@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.add
 import com.example.healtyapp.activity.LoginActivity
+import com.example.healtyapp.activity.MasukActivity
 import com.example.healtyapp.fragment.AccountFragment
 import com.example.healtyapp.fragment.HomeFragment
 import com.example.healtyapp.fragment.PoliFragment
@@ -68,7 +69,7 @@ class MainActivity : AppCompatActivity() {
                     if(s.getStatusLogin()) { // get boolean status dari sharedpref
                         callFragment(2, fragmentAccount)
                     } else {
-                        startActivity(Intent(this, LoginActivity::class.java))
+                        startActivity(Intent(this, MasukActivity::class.java))
                     }
                 }
             }
