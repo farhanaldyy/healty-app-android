@@ -1,2 +1,2 @@
-include ':app'
+include ':com.example.healtyapp.app'
 rootProject.name = "HealtyApp"
