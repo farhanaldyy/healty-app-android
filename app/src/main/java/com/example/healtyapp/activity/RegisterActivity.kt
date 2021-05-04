@@ -2,6 +2,7 @@ package com.example.healtyapp.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import com.example.healtyapp.R
 import com.example.healtyapp.app.ApiConfig
 import kotlinx.android.synthetic.main.activity_register.*
@@ -16,10 +17,8 @@ class RegisterActivity : AppCompatActivity() {
         setContentView(R.layout.activity_register)
 
         btn_register.setOnClickListener{
-
+            register()
         }
-
-        register()
 
     }
 
