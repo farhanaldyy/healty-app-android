@@ -25,13 +25,18 @@ class MasukActivity : AppCompatActivity() {
     }
 
     private fun mainButton(){
+//        btn_login.setOnClickListener{
+//            s.setStatusLogin(true)
+//        }
+
         btn_login.setOnClickListener{
-            s.setStatusLogin(true)
+            startActivity(Intent(this, LoginActivity::class.java))
         }
 
         btn_register.setOnClickListener{
             startActivity(Intent(this, RegisterActivity::class.java))
         }
+
     }
 
 }

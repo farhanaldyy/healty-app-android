@@ -42,6 +42,7 @@ class RegisterActivity : AppCompatActivity() {
             return
         }
 
+
         // validasi berhasil -> panggil url api
         ApiConfig.instanceRetrofit.register(edit_nama.text.toString(), edit_email.text.toString(), edit_password.text.toString()).enqueue(object : Callback<ResponseBody>{
             override fun onFailure(call: Call<ResponseBody>, t: Throwable) {

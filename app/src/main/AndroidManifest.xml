@@ -10,7 +10,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/icons8_hospital_90px"
         android:supportsRtl="true"
-        android:theme="@style/Theme.HealtyApp">
+        android:theme="@style/Theme.HealtyApp"
+        android:usesCleartextTraffic="true">
         <activity android:name=".activity.RegisterActivity" android:theme="@style/Theme.AppCompat.NoActionBar">
         </activity>
         <activity

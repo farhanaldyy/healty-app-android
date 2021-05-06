@@ -9,7 +9,7 @@ import retrofit2.http.POST
 interface ApiService {
 
     @FormUrlEncoded
-    @POST("register") // pull request base url dari api config
+    @POST("register") // pull request base url untuk api config
     fun register(
         // isi parameter variabel field
         @Field("name") name: String,
@@ -17,7 +17,7 @@ interface ApiService {
         @Field("password") password: String
     ):Call<ResponseBody>
 
-    @POST("login") // pull request dari api config
+    @POST("login") // pull request untuk api config
     fun login(
         // isi parameter variabel field
         @Field("name") name: String,
