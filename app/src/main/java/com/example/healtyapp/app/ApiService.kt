@@ -1,5 +1,6 @@
 package com.example.healtyapp.app
 
+import com.example.healtyapp.model.ResponseModel
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.http.Field
@@ -15,7 +16,7 @@ interface ApiService {
         @Field("name") name: String,
         @Field("email") email: String,
         @Field("password") password: String
-    ):Call<ResponseBody>
+    ):Call<ResponseModel>
 
     @POST("login") // pull request untuk api config
     fun login(

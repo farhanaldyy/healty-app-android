@@ -3,8 +3,10 @@ package com.example.healtyapp.activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import com.example.healtyapp.R
 import com.example.healtyapp.app.ApiConfig
+import com.example.healtyapp.model.ResponseModel
 import kotlinx.android.synthetic.main.activity_register.*
 import okhttp3.ResponseBody
 import retrofit2.Call
@@ -44,15 +46,23 @@ class RegisterActivity : AppCompatActivity() {
 
 
         // validasi berhasil -> panggil url api
-        ApiConfig.instanceRetrofit.register(edit_nama.text.toString(), edit_email.text.toString(), edit_password.text.toString()).enqueue(object : Callback<ResponseBody>{
-            override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
-                // hendel ketika response gagal
+        ApiConfig.instanceRetrofit.register(edit_nama.text.toString(), edit_email.text.toString(), edit_password.text.toString()).enqueue(object : Callback<ResponseModel>{
 
+            override fun onFailure(call: Call<ResponseModel>, t: Throwable) {
+                Toast.makeText(this@RegisterActivity, "Error : "+t.message, Toast.LENGTH_SHORT).show()
             }
 
-            override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
-                // hendel ketika response sukses
+            override fun onResponse(call: Call<ResponseModel>, response: Response<ResponseModel>) {
 
+                val respon = response.body()!!
+
+                if (respon.success == 1) {
+                    // berhasil
+                    Toast.makeText(this@RegisterActivity, "Success : "+"Selamat datang "+respon.user.name, Toast.LENGTH_SHORT).show()
+                } else {
+                    // gagal
+                    Toast.makeText(this@RegisterActivity, "Error : "+respon.message, Toast.LENGTH_SHORT).show()
+                }
             }
         })
 
