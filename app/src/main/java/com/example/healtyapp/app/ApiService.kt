@@ -18,12 +18,12 @@ interface ApiService {
         @Field("password") password: String
     ):Call<ResponseModel>
 
+    @FormUrlEncoded
     @POST("login") // pull request untuk api config
     fun login(
         // isi parameter variabel field
-        @Field("name") name: String,
         @Field("email") email: String,
         @Field("password") password: String
-    ):Call<ResponseBody>
+    ):Call<ResponseModel>
 
 }
