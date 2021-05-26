@@ -15,6 +15,7 @@ interface ApiService {
         // isi parameter variabel field
         @Field("name") name: String,
         @Field("email") email: String,
+        @Field("phone") phone: String,
         @Field("password") password: String
     ):Call<ResponseModel>
 

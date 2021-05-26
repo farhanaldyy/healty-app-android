@@ -48,25 +48,30 @@ class LoginActivity : AppCompatActivity() {
             return
         }
 
-
+        pr.visibility = View.VISIBLE
         // validasi berhasil -> panggil url api
-        pb.visibility = View.VISIBLE
         ApiConfig.instanceRetrofit.login(edit_email.text.toString(), edit_password.text.toString()).enqueue(object : Callback<ResponseModel> {
 
             override fun onFailure(call: Call<ResponseModel>, t: Throwable) {
-                pb.visibility = View.GONE
+                pr.visibility = View.GONE
                 Toast.makeText(this@LoginActivity, "Error : "+t.message, Toast.LENGTH_SHORT).show()
             }
 
             override fun onResponse(call: Call<ResponseModel>, response: Response<ResponseModel>) {
 
-                pb.visibility = View.GONE
+                pr.visibility = View.GONE
 
                 val respon = response.body()!!
 
                 if (respon.success == 1) {
                     // berhasil
                     s.setStatusLogin(true)
+
+                    // set data user account
+                    s.setString(s.name, respon.user.name)
+                    s.setString(s.email, respon.user.email)
+                    s.setString(s.phone, respon.user.phone)
+
                     val intent = Intent(this@LoginActivity, MainActivity::class.java)
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
                     startActivity(intent)

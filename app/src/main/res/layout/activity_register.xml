@@ -208,7 +208,7 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/ic_baseline_lock_24"
+                        android:src="@drawable/ic_baseline_lock_dark"
                         android:layout_marginRight="5dp"
                         android:layout_marginTop="5dp"/>
 
@@ -253,5 +253,14 @@
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
+
+    <ProgressBar
+        android:id="@+id/pb"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="15dp"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone"/>
 
 </RelativeLayout>

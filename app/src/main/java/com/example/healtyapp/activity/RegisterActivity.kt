@@ -53,15 +53,18 @@ class RegisterActivity : AppCompatActivity() {
             return
         }
 
-
+        pb.visibility = View.VISIBLE
         // validasi berhasil -> panggil url api
-        ApiConfig.instanceRetrofit.register(edit_nama.text.toString(), edit_email.text.toString(), edit_password.text.toString()).enqueue(object : Callback<ResponseModel>{
+        ApiConfig.instanceRetrofit.register(edit_nama.text.toString(), edit_email.text.toString(), edit_tlp.text.toString(), edit_password.text.toString()).enqueue(object : Callback<ResponseModel>{
 
             override fun onFailure(call: Call<ResponseModel>, t: Throwable) {
+                pb.visibility = View.GONE
                 Toast.makeText(this@RegisterActivity, "Error : "+t.message, Toast.LENGTH_SHORT).show()
             }
 
             override fun onResponse(call: Call<ResponseModel>, response: Response<ResponseModel>) {
+
+                pb.visibility = View.GONE
 
                 val respon = response.body()!!
 

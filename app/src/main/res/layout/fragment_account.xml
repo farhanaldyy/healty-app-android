@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,24 +7,218 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
+    <RelativeLayout
+        android:id="@+id/header_title"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:text="ACCOUNT"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:layout_marginBottom="10dp"/>
+        android:layout_height="70dp"
+        android:background="@color/blue1"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btn_logout"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:layout_gravity="center_horizontal"
-        android:text="LOGOUT"
-        android:textColor="@color/blue1"
-        android:backgroundTint="@color/gray"
-        android:layout_marginVertical="30dp"/>
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
 
-</FrameLayout>
+            <ImageView
+                android:id="@+id/ic_logo"
+                android:layout_width="130dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="20dp"
+                android:src="@drawable/logo1"/>
+
+        </LinearLayout>
+
+    </RelativeLayout> <!-- Header -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:layout_marginTop="70dp">
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="PROFILE"
+                android:textColor="@color/blue1"
+                android:textStyle="bold"
+                android:textSize="20sp" />
+
+        <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/ic_baseline_account_box_24" />
+
+        <TextView
+                android:id="@+id/tv_nama"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="Nama User"
+                android:textColor="@color/dark" />
+
+        <TextView
+                android:id="@+id/tv_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:gravity="center"
+                android:text="Nomor Telp"
+                android:textColor="@color/dark" />
+
+        <TextView
+                android:id="@+id/tv_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:gravity="center"
+                android:text="Email"
+                android:textColor="@color/dark" />
+
+        <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="1dp"
+                android:layout_marginTop="35dp"
+                android:layout_marginBottom="2dp"
+                app:cardElevation="3dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="20dp"
+                    android:paddingVertical="20dp"
+                    android:background="@color/white">
+
+                    <RelativeLayout
+                        android:id="@+id/btn_editProfile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:gravity="center_vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:srcCompat="@drawable/ic_baseline_edit_24" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:text="Ubah Profile"
+                                android:textColor="@color/dark" />
+
+                        </LinearLayout>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            app:srcCompat="@drawable/ic_baseline_chevron_right_24" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/btn_ubahPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginTop="20dp"
+                        android:gravity="center_vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:srcCompat="@drawable/ic_baseline_lock_24" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:text="Ubah Password"
+                                android:textColor="@color/dark" />
+
+                        </LinearLayout>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            app:srcCompat="@drawable/ic_baseline_chevron_right_24" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/btn_tambahKeluarga"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginTop="20dp"
+                        android:gravity="center_vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:srcCompat="@drawable/ic_baseline_family_restroom_24" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:text="Keluarga (Pasien)"
+                                android:textColor="@color/dark" />
+
+                        </LinearLayout>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            app:srcCompat="@drawable/ic_baseline_chevron_right_24" />
+
+                    </RelativeLayout>
+
+                    <Button
+                        android:id="@+id/btn_logout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginTop="30dp"
+                        android:backgroundTint="@color/orange"
+                        android:text="Logout Account"
+                        android:textColor="@color/white"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+</RelativeLayout>
