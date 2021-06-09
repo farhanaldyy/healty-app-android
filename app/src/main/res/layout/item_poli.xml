@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_hemo"
+    android:layout_width="match_parent"
+    android:layout_marginStart="30dp"
+    android:layout_marginEnd="30dp"
+    android:layout_height="80dp"
+    android:background="@color/dark"
+    android:backgroundTint="@color/white"
+    app:cardCornerRadius="20dp"
+    android:layout_marginBottom="10dp">
+
+    <RelativeLayout
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/img_poli"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/poli_mata"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginStart="120dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginVertical="20dp">
+
+            <TextView
+                android:id="@+id/tv_poli"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="txt"
+                android:textColor="@color/dark"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/tv_ruangan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="txt"
+                android:textColor="#595959"
+                android:textSize="12sp"/>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

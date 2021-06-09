@@ -154,24 +154,30 @@
                 android:backgroundTint="@color/blue1"
                 android:layout_marginTop="30dp"/>
 
-            <TextView
-                android:id="@+id/btn_lupaPassword"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="20dp"
-                android:text="Lupa Password?"
-                android:textColor="@color/dark"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/btn_register"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="13dp"
-                android:text="Register Account"
-                android:textStyle="bold"
-                android:textColor="@color/green"/>
+                <TextView
+                    android:id="@+id/btn_lupaPassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_alignParentLeft="true"
+                    android:text="Lupa Password?"
+                    android:textColor="@color/dark"/>
+
+                <TextView
+                    android:id="@+id/btn_register"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_alignParentRight="true"
+                    android:text="Register Account"
+                    android:textStyle="bold"
+                    android:textColor="@color/dark"/>
+
+            </RelativeLayout>
 
         </LinearLayout>
 
