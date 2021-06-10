@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/card_poli"
+    android:id="@+id/card_dokter"
     android:layout_width="match_parent"
     android:layout_marginStart="30dp"
     android:layout_marginEnd="30dp"
@@ -19,7 +19,7 @@
             android:background="@color/white">
 
         <ImageView
-            android:id="@+id/img_poli"
+            android:id="@+id/img_dokter"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:src="@drawable/poli_mata"/>
@@ -35,7 +35,7 @@
             android:layout_marginVertical="20dp">
 
             <TextView
-                android:id="@+id/tv_poli"
+                android:id="@+id/tv_dokter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="txt"
@@ -43,7 +43,7 @@
                 android:textStyle="bold"/>
 
             <TextView
-                android:id="@+id/tv_ruangan"
+                android:id="@+id/tv_spesialis"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="txt"

@@ -5,4 +5,5 @@ class ResponseModel {
     lateinit var message:String
     var user = User()
     var polis : ArrayList<Poli> = ArrayList()
+    var dokters : ArrayList<Dokter> = ArrayList()
 }

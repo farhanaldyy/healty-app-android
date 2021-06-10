@@ -1,13 +1,19 @@
 package com.example.healtyapp.fragment
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.healtyapp.MainActivity
 import com.example.healtyapp.R
+import com.example.healtyapp.activity.DokterActivity
 import com.example.healtyapp.adapter.PoliAdapter
 import com.example.healtyapp.app.ApiConfig
 import com.example.healtyapp.model.Poli
@@ -27,7 +33,6 @@ class PoliFragment : Fragment() {
         // Inflate the layout for this fragment
         val view: View =  inflater.inflate(R.layout.fragment_poli, container, false)
         rvPoli = view.findViewById(R.id.rv_poli)
-
         getPoli()
         return view
     }
@@ -36,7 +41,7 @@ class PoliFragment : Fragment() {
         val layoutManager = LinearLayoutManager(activity)
         layoutManager.orientation = LinearLayoutManager.VERTICAL
 
-        rvPoli.adapter = PoliAdapter(listPoli)
+        rvPoli.adapter = PoliAdapter(requireActivity(),listPoli)
         rvPoli.layoutManager = layoutManager
     }
 

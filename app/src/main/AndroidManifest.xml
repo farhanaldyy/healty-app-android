@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HealtyApp"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ItemPoliActivity"></activity>
+        <activity android:name=".activity.DokterActivity" android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
         <activity
             android:name=".activity.RegisterActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />

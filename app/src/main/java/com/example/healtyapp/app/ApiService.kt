@@ -31,4 +31,7 @@ interface ApiService {
     @GET("poli") // pull request untuk api config
     fun getPoli():Call<ResponseModel>
 
+    @GET("dokter")
+    fun getDokter():Call<ResponseModel>
+
 }
